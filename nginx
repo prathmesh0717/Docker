@@ -1,0 +1,7 @@
+FROM ubuntu:20.04
+WORKDIR PK
+RUN apt update -y && \
+    apt install nginx -y
+
+COPY index.html /var/www/html/
+CMD ["nginx","-g","daemon off;"]
