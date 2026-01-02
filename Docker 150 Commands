@@ -1,0 +1,97 @@
+*150 Docker Commands with Their Uses*
+docker version - Display Docker version info
+docker info - Show system-wide info
+docker help - Get help for Docker commands
+docker pull ubuntu - Download the ubuntu image
+docker pull alpine - Download the alpine image
+docker images - List local images
+docker rmi ubuntu - Remove ubuntu image
+docker rmi -f alpine - Force remove alpine image
+docker tag ubuntu myubuntu:v1 - Add tag to image
+docker save -o ubuntu.tar ubuntu - Save image to a tar file
+docker load -i ubuntu.tar - Load image from tar file
+docker history ubuntu - Show history of an image
+docker inspect ubuntu - Detailed inspection of image
+docker run ubuntu - Run ubuntu container
+docker run -it ubuntu bash - Run interactive container
+docker run -d nginx - Run nginx in detached mode
+docker run --name web nginx - Assign container name
+docker run -p 8080:80 nginx - Map container port to host
+docker start web - Start a stopped container
+docker stop web - Stop running container
+docker restart web - Restart container
+docker kill web - Force stop container
+docker rm web - Remove container
+docker ps - Show running containers
+docker ps -a - Show all containers
+docker logs web - View container logs
+docker exec -it web bash - Run bash inside container
+docker attach web - Attach terminal to container
+docker top web - View running processes
+docker rename web web1 - Rename container
+docker update --restart unless-stopped web - Set restart policy
+docker wait web - Wait until container stops
+docker diff web - Changes to container filesystem
+docker cp web:/file.txt . - Copy file from container
+docker cp ./file.txt web:/ - Copy file into container
+docker volume create myvol - Create named volume
+docker volume ls - List volumes
+docker volume inspect myvol - Inspect volume
+docker volume rm myvol - Remove volume
+docker volume prune - Remove all unused volumes
+docker run -v myvol:/data ubuntu - Mount named volume
+docker run -v /data ubuntu - Anonymous volume
+docker run -v /host:/container ubuntu - Bind mount
+docker network ls - List Docker networks
+docker network create mynet - Create bridge network
+docker network inspect mynet - Inspect network
+docker network rm mynet - Remove network
+docker network connect mynet web - Connect container to network
+docker network disconnect mynet web - Disconnect container
+docker run --network host nginx - Use host network
+docker run --network none nginx - Run with no networking
+docker network prune - Remove all unused networks
+FROM ubuntu - Base image
+RUN apt update - Execute command during build
+COPY . /app - Copy files
+WORKDIR /app - Set working directory
+EXPOSE 80 - Expose port
+CMD ["nginx"] - Default command
+ENTRYPOINT ["/start.sh"] - Main entry point
+ENV MODE=dev - Set environment variable
+ARG VERSION - Set build-time variable
+LABEL author='user' - Metadata label
+VOLUME /data - Create mount point
+USER www-data - Set user
+HEALTHCHECK CMD curl -f http://localhost || exit 1 - Container health check
+docker system df - Show disk usage
+docker system prune - Remove unused data
+docker builder prune - Clean build cache
+docker image prune - Remove unused images
+docker container prune - Remove stopped containers
+docker build -t app . - Build image from Dockerfile
+docker build -f Dockerfile.dev -t devapp . - Build with custom Dockerfile
+docker export web > web.tar - Export container as tar
+docker import web.tar - Import container tar as image
+docker save image > image.tar - Save image to tar
+docker load < image.tar - Load image from tar
+docker stats - Live stats of all containers
+docker stats web - Stats of one container
+docker run --memory=256m ubuntu - Limit memory
+docker run --cpus=1.0 ubuntu - Limit CPU usage
+docker login - Login to DockerHub
+docker logout - Logout from DockerHub
+docker search nginx - Search DockerHub for images
+docker push user/image - Push image to registry
+docker pull user/image - Pull image from registry
+docker events - Real-time event log
+docker inspect web - Low-level container info
+docker inspect -f '{{.Name}}' web - Formatted inspect
+docker context ls - List contexts
+docker context use default - Switch context
+docker-compose up - Start services
+docker-compose down - Stop and remove services
+docker-compose build - Build services
+docker-compose logs - Service logs
+docker-compose ps - List services
+docker-compose exec web bash - Execute inside service
