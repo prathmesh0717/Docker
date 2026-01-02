@@ -1,4 +1,4 @@
-*150 Docker Commands with Their Uses*
+${\color{red} \textbf{150 Docker Commands}}$
 docker version - Display Docker version info
 docker info - Show system-wide info
 docker help - Get help for Docker commands
